@@ -2,12 +2,12 @@
 <testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-24T11:49:07 IST" name="Default suite" finished-at="2024-01-24T11:49:07 IST" duration-ms="157">
+  <suite started-at="2024-01-24T18:30:47 IST" name="Default suite" finished-at="2024-01-24T18:30:47 IST" duration-ms="162">
     <groups>
     </groups>
-    <test started-at="2024-01-24T11:49:07 IST" name="Default test" finished-at="2024-01-24T11:49:07 IST" duration-ms="157">
+    <test started-at="2024-01-24T18:30:47 IST" name="Default test" finished-at="2024-01-24T18:30:47 IST" duration-ms="162">
       <class name="Bdd_Method.Jsonpath">
-        <test-method signature="parsingOneTime()[pri:0, instance:Bdd_Method.Jsonpath@1e6454ec]" started-at="2024-01-24T11:49:07 IST" name="parsingOneTime" finished-at="2024-01-24T11:49:07 IST" duration-ms="106" status="PASS">
+        <test-method signature="parsingOneTime()[pri:0, instance:Bdd_Method.Jsonpath@1e6454ec]" started-at="2024-01-24T18:30:47 IST" name="parsingOneTime" finished-at="2024-01-24T18:30:47 IST" duration-ms="93" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- parsingOneTime -->

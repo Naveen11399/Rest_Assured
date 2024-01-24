@@ -47,6 +47,8 @@ public class Jsonpath {
 			System.out.println(typeList);
 
 		}
+		
+		System.out.println("naveenuuu");
 	}
 
 }
