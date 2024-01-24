@@ -9,6 +9,7 @@ import java.util.List;
 import org.testng.annotations.Test;
 
 import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 
 public class Jsonpath {
@@ -47,8 +48,31 @@ public class Jsonpath {
 			System.out.println(typeList);
 
 		}
-		
+
 		System.out.println("naveenuuu");
+	}
+
+	@Test
+	public void fluentAPI() throws IOException {
+		File jsonFile = new File("src/test/resources/sampleJsonPathFile.json");
+
+		DocumentContext Context = JsonPath.parse(jsonFile);
+
+		List<Object> id = Context.read("$.topping[*].id");
+
+		for (Object idList : id) {
+			System.out.println(idList);
+
+		}
+
+		Configuration config = Configuration.defaultConfiguration();
+		List<Object> type = JsonPath.using(config).parse(jsonFile).read("$.topping[*].type");
+
+		for (Object typeList : type) {
+			System.out.println(typeList);
+
+		}
+
 	}
 
 }

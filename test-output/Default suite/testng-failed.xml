@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Bdd_Method.JSONschemaValidationUsingNetworkn">
+      <class name="Bdd_Method.Jsonpath">
         <methods>
-          <include name="JSONschemaValidationHamcrest"/>
+          <include name="fluentAPI"/>
         </methods>
-      </class> <!-- Bdd_Method.JSONschemaValidationUsingNetworkn -->
+      </class> <!-- Bdd_Method.Jsonpath -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
