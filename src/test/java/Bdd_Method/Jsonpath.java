@@ -75,4 +75,62 @@ public class Jsonpath {
 
 	}
 
+	@Test
+	public void knowWhatIsReturn() throws IOException {
+
+		// Define Path---return single value based on the return ,we need to create a
+		// variable like string ,int
+
+		// IndefinePath--{..-deepscan,expressrion-[?@(exp)],[0,1],[*]}
+		File jsonFile = new File("src/test/resources/sampleJsonPathFile.json");
+
+		DocumentContext context = JsonPath.parse(jsonFile);
+
+		String typeList = context.read("$.topping[0].type");
+
+		System.out.println(typeList);
+
+		List<Object> typeList1 = context.read("$.topping[*].type");
+
+		for (Object type1 : typeList1) {
+			System.out.println(type1);
+
+		}
+
+		// $..batter[?(@.id=='1001' || @.type=='Chocolate')]
+	}
+
+	@Test
+	public void inlinePredicates() throws IOException {
+		
+		File jsonFile = new File("src/test/resources/sampleJsonPathFile.json");
+
+		DocumentContext context = JsonPath.parse(jsonFile);
+		
+		List<Object> andLogic= context.read("$..batter[?(@.id=='1003' && @.type=='Blueberry')]");
+
+		for (Object logic1 : andLogic) {
+			System.out.println(logic1);
+
+		}
+		
+		List<Object> orLogic = context.read("$..batter[?(@.id=='1001' || @.type=='Chocolate')]");
+
+		for (Object logic2 : orLogic) {
+			System.out.println(logic2);
+
+		}
+		
+		List<Object> norLogic = context.read("$..batter[?(!(@.id=='1001' || @.type=='Chocolate'))]");
+
+		for (Object logic3 : norLogic) {
+			System.out.println(logic3);
+
+		}
+		
+		
+
+
+	}
+
 }
