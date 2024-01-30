@@ -5,12 +5,21 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.Map;
+
+
+import javax.annotation.meta.When;
 
 import org.testng.annotations.Test;
 
 import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.DocumentContext;
+import com.jayway.jsonpath.Filter;
 import com.jayway.jsonpath.JsonPath;
+import static com.jayway.jsonpath.Filter.*;
+import static com.jayway.jsonpath.JsonPath.*;
+import static com.jayway.jsonpath.Criteria.*;
 
 public class Jsonpath {
 
@@ -102,34 +111,61 @@ public class Jsonpath {
 
 	@Test
 	public void inlinePredicates() throws IOException {
-		
+
 		File jsonFile = new File("src/test/resources/sampleJsonPathFile.json");
 
 		DocumentContext context = JsonPath.parse(jsonFile);
-		
-		List<Object> andLogic= context.read("$..batter[?(@.id=='1003' && @.type=='Blueberry')]");
+
+		List<Object> andLogic = context.read("$..batter[?(@.id=='1003' && @.type=='Blueberry')]");
 
 		for (Object logic1 : andLogic) {
 			System.out.println(logic1);
 
 		}
-		
+
 		List<Object> orLogic = context.read("$..batter[?(@.id=='1001' || @.type=='Chocolate')]");
 
 		for (Object logic2 : orLogic) {
 			System.out.println(logic2);
 
 		}
-		
+
 		List<Object> norLogic = context.read("$..batter[?(!(@.id=='1001' || @.type=='Chocolate'))]");
 
 		for (Object logic3 : norLogic) {
 			System.out.println(logic3);
 
 		}
-		
-		
 
+	}
+
+	@Test
+	public void FilterPredicates() throws IOException {
+		
+		File jsonFile = new File("src/test/resources/sampleJsonPathFile.json");
+		 
+	    Filter filter= Filter.filter(
+		Criteria
+		.where("id")
+		.eq("1003")
+		.and("type")
+		.is("Blueberry")
+		
+			);
+		
+	    List<Object> type = JsonPath.parse(jsonFile).read("$..batter[?]",filter);
+		
+		System.out.println(type);
+		
+		Filter staticFilter=filter(
+				where("id")
+				.gt("1001")
+				.and("type")
+				.is("Devil's Food")
+				);
+		
+		 List<Map<String,Object>> type1 = parse(jsonFile).read("$..batter[*]", staticFilter);
+		 System.out.println(type1.get(2).get("type"));
 
 	}
 
