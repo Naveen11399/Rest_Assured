@@ -5,7 +5,7 @@
     <classes>
       <class name="Bdd_Method.Jsonpath">
         <methods>
-          <include name="inlinePredicates"/>
+          <include name="FilterPredicates"/>
         </methods>
       </class> <!-- Bdd_Method.Jsonpath -->
     </classes>
