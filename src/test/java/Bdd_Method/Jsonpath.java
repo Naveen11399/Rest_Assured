@@ -17,6 +17,10 @@ import com.jayway.jsonpath.Criteria;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.Filter;
 import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.Option;
+import com.jayway.jsonpath.Predicate;
+import com.jayway.jsonpath.Predicate.PredicateContext;
+
 import static com.jayway.jsonpath.Filter.*;
 import static com.jayway.jsonpath.JsonPath.*;
 import static com.jayway.jsonpath.Criteria.*;
@@ -168,5 +172,46 @@ public class Jsonpath {
 		 System.out.println(type1.get(2).get("type"));
 
 	}
+	
+	@Test
+	public void ownPredicates() throws IOException {
+		File jsonFile = new File("src/test/resources/BooksJson.json");
+		
+		//Functional Expression 
+		
+		
+		/*
+		Predicate pd=new Predicate() {
+			
+			@Override
+			public boolean apply(PredicateContext ctx) {
+				boolean txt=ctx.item(Map.class).containsKey("ISBN");
+				
+				return txt;
+			}*/
+		
+		//lambda expressions
+		Predicate pd=ctx->ctx.item(Map.class).containsKey("ISBN");
+		 List<Map<String,Object>> type1 = parse(jsonFile).read("$..Books[*].ISBN",pd );
+		 System.out.println(type1);
+			
+		};
+		
+	@Test	
+	public void configuration() throws IOException {
+		
+		File jsonFile = new File("src/test/resources/BooksJson.json");
+
+		Configuration config = Configuration.defaultConfiguration();
+		config.addOptions(Option.REQUIRE_PROPERTIES.SUPPRESS_EXCEPTIONS);
+		config.addOptions(Option.REQUIRE_PROPERTIES.ALWAYS_RETURN_LIST);
+		config.addOptions(Option.REQUIRE_PROPERTIES.DEFAULT_PATH_LEAF_TO_NULL);
+    String res = JsonPath.using(config).parse(jsonFile).read("$.Books[*].ISBN");
+		
+		System.out.println(res);
+		
+	}
+	
+	
 
 }
