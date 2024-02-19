@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Deserialization.deserializationMethod">
+      <class name="reqSpecificationExample.reqSpecificationExamples">
         <methods>
-          <include name="deserialization_UsingAsFunction"/>
+          <include name="postMethod"/>
+          <include name="setReqSpecification"/>
         </methods>
-      </class> <!-- Deserialization.deserializationMethod -->
+      </class> <!-- reqSpecificationExample.reqSpecificationExamples -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

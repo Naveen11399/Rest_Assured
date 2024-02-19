@@ -90,20 +90,23 @@ public class deserializationMethod {
 		public void deserialization_UsingAsFunction() {
 			
 			
-			Map<String, Object> res=	given()
+		Map<String,Object> res=	given()
 			.baseUri("http://3.6.249.0/backend/api")
 			.when()
 			.get("/seo/product/syler-king")
 			.then()
 			.extract()
 			.body()
-			.as( new TypeRef <Map<String, Object>>() {
+			.as(new TypeRef<Map<String,Object>>() {
 			});
 			
-			//System.out.println(res);
+			
+			System.out.println(res);
 		
 			
 			System.out.println(res.get("message"));
 	
 		}
+	
+	
 }

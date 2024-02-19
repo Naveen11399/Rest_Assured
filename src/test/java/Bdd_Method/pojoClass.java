@@ -24,6 +24,9 @@ public class pojoClass {
 		ObjectMapper om=new ObjectMapper();
 		String jsonFile=om.writerWithDefaultPrettyPrinter().writeValueAsString(pojclassObj);
 		System.out.println(jsonFile);
+		
+		
+		
 
 	}
 

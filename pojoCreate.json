@@ -1,0 +1,18 @@
+{
+  "name" : "naveenuu",
+  "age" : 25,
+  "email" : "nk@gmail.com",
+  "address" : {
+    "street" : "north street",
+    "city" : "plk",
+    "state" : "TN",
+    "zipcode" : 608701
+  },
+  "phoneNumberu" : [ {
+    "type" : "Home",
+    "number" : 2343
+  }, {
+    "type" : "Work",
+    "number" : 777
+  } ]
+}
