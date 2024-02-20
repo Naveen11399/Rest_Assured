@@ -1,29 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-19T19:21:23 IST" name="Default suite" finished-at="2024-02-19T19:21:26 IST" duration-ms="2314">
+  <suite started-at="2024-02-20T18:11:45 IST" name="Default suite" finished-at="2024-02-20T18:11:48 IST" duration-ms="3810">
     <groups>
     </groups>
-    <test started-at="2024-02-19T19:21:23 IST" name="Default test" finished-at="2024-02-19T19:21:26 IST" duration-ms="2314">
-      <class name="reqSpecificationExample.reqSpecificationExamples">
-        <test-method is-config="true" signature="setReqSpecification()[pri:0, instance:reqSpecificationExample.reqSpecificationExamples@662b4c69]" started-at="2024-02-19T19:21:23 IST" name="setReqSpecification" finished-at="2024-02-19T19:21:23 IST" duration-ms="694" status="PASS">
+    <test started-at="2024-02-20T18:11:45 IST" name="Default test" finished-at="2024-02-20T18:11:48 IST" duration-ms="3810">
+      <class name="authorization.BasicAuth">
+        <test-method signature="oAuth2()[pri:0, instance:authorization.BasicAuth@5ace1ed4]" started-at="2024-02-20T18:11:45 IST" name="oAuth2" finished-at="2024-02-20T18:11:48 IST" duration-ms="3747" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setReqSpecification -->
-        <test-method signature="getRating1()[pri:0, instance:reqSpecificationExample.reqSpecificationExamples@662b4c69]" started-at="2024-02-19T19:21:23 IST" name="getRating1" finished-at="2024-02-19T19:21:25 IST" duration-ms="1394" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getRating1 -->
-        <test-method signature="getWidgetDetails()[pri:0, instance:reqSpecificationExample.reqSpecificationExamples@662b4c69]" started-at="2024-02-19T19:21:25 IST" name="getWidgetDetails" finished-at="2024-02-19T19:21:25 IST" duration-ms="236" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getWidgetDetails -->
-        <test-method signature="postMethod()[pri:0, instance:reqSpecificationExample.reqSpecificationExamples@662b4c69]" started-at="2024-02-19T19:21:25 IST" name="postMethod" finished-at="2024-02-19T19:21:26 IST" duration-ms="590" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postMethod -->
-      </class> <!-- reqSpecificationExample.reqSpecificationExamples -->
+        </test-method> <!-- oAuth2 -->
+      </class> <!-- authorization.BasicAuth -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

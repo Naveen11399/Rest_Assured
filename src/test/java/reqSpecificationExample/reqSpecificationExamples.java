@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import  io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 
 public class reqSpecificationExamples {
@@ -18,7 +19,7 @@ public class reqSpecificationExamples {
          RestAssured.requestSpecification=reqSpec;
 		
 		
-		
+	
 		
 	}
 	
@@ -46,6 +47,9 @@ public class reqSpecificationExamples {
 	@Test
 	public void postMethod() {
 		
+		//multiple req specification
+		
+		
 		RequestSpecification RQS=RestAssured.given()
 				.baseUri("https://api.picco.support/backend/api/")
 				.basePath("auth/login")
@@ -63,6 +67,26 @@ public class reqSpecificationExamples {
 		.prettyPrint();
 		
 	
+		
+	}
+	
+	@Test
+	public void reqSpecBuilder() {
+		RequestSpecBuilder builder =new RequestSpecBuilder();
+		
+//		builder.setBaseUri("http://3.6.249.0");
+//		builder.setBasePath("/backend/api");
+//		
+//		RequestSpecification spec=builder.build();
+		
+		//another method
+		
+	  RequestSpecification spec=	builder.setBaseUri("http://3.6.249.0").setBasePath("/backend/api").build();
+		
+		RestAssured.given(spec).get("/list/widget-detail/todays-deals").prettyPrint();
+		
+		
+		
 		
 	}
 	
